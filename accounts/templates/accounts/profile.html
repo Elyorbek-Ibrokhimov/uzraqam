@@ -1,0 +1,9 @@
+<!-- accounts/templates/accounts/profile.html -->
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Profile Page</h1>
+<p>Welcome, {{ user.first_name }} {{ user.last_name }}!</p>
+<p>Email: {{ user.email }}</p>
+{% endblock %}

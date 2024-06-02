@@ -6,5 +6,11 @@
     <p class="lead">This is a simple Django project with user authentication.</p>
     <hr class="my-4">
     <p>Use the navigation bar to log in or register.</p>
+<div class="container mt-3">
+    <p class="text-center">Use the navigation bar to log in or register.</p>
+    <div class="text-center">
+        <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+    </div>
+</div>
 </div>
 {% endblock %}

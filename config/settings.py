@@ -20,25 +20,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--3@wf&^0(qh)q7sps5e+%)k_jz)@b*onml#z=2(mhh=_^rjj@p'
+SECRET_KEY = 'django-insecure-tvb+18ca=zqn!oi7wz+h)2yy1lno+#utm(-4wy5#b7a(ysdbrn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+AUTH_USER_MODEL = 'accounts.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [
+'home',
+'accounts',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
-    'bot',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [str(BASE_DIR.joinpath('templates'))],
+        'DIRS': [BASE_DIR.joinpath('templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,11 +124,16 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-###################################################
 # myproject/settings.py
 
-AUTH_USER_MODEL = 'accounts.CustomUser'
-# myproject/settings.py
+from django.contrib.messages import constants as messages
 
-LOGIN_REDIRECT_URL = 'dashboard'  # Muvaffaqiyatli login'dan keyin yo'naltiriladigan URL
-LOGOUT_REDIRECT_URL = 'login'  # Logout'dan keyin yo'naltiriladigan URL
+MESSAGE_TAGS = {
+    messages.DEBUG: 'debug',
+    messages.INFO: 'info',
+    messages.SUCCESS: 'success',
+    messages.WARNING: 'warning',
+    messages.ERROR: 'danger',
+}
+
+LOGIN_REDIRECT_URL = '/'

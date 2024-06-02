@@ -31,6 +31,7 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [
+    'myweb',
 'home',
 'accounts',
     'django.contrib.admin',
@@ -136,4 +137,4 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/m/'
